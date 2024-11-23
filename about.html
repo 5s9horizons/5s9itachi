@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5s9 ITACHI | ALL | About us</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        :root {
+            --primary-bg: #1a1a2e;
+            --secondary-bg: #16213e;
+            --accent-color: #e94560;
+            --text-color: #ffffff;
+        }
+        
+        html {
+            height: 100%;
+        }
+        
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('itachi.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--text-color);
+            position: relative;
+        }
+
+        .rain-container {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .rain {
+            position: absolute;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.6));
+            animation: rain linear infinite;
+        }
+
+        @keyframes rain {
+            0% {
+                transform: translateY(-100vh);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: var(--secondary-bg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 100;
+        }
+
+        .left-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .hamburger, .search-icon, .close-icon {
+            cursor: pointer;
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: var(--accent-color);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        /* Navigation Menu Styles */
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            left: -80%;
+            width: 80%;
+            height: 100vh;
+            background: var(--primary-bg);
+            transition: 0.3s;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .nav-menu.active {
+            left: 0;
+        }
+
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 999;
+        }
+
+        .nav-overlay.active {
+            display: block;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .nav-menu ul li {
+            margin: 20px 0;
+        }
+
+        .nav-menu ul li a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* Main Content Area */
+        main {
+            margin-top: 120px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="rain-container"></div>
+    <header>
+        <div class="left-section">
+            <button class="hamburger"><i class="fas fa-bars"></i></button>
+            <div class="logo">5s9 ITACHI | ALL</div>
+        </div>
+    </header>
+
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="favorites.html">Favorites</a></li>
+        </ul>
+    </nav>
+    <div class="nav-overlay"></div>
+
+    <main style="text-align: center;">
+      <div class="container mx-auto p-6">
+        <h2 class="text-3xl text-[#e94560] mb-4">About Us</h2>
+        <div class="bg-[none] p-6 rounded">
+            <p class="mb-4">
+                5s9 ITACHI ALL is a the community-driven platform designed to add more interactivity in the community "NAKAMA LAND" in which the "FREE IMAGE 4K" Group belong to.
+            </p>
+        </div>
+      </div>
+    
+      <div class="container mx-auto p-6">
+        <div class="bg-[none] p-6 rounded">
+            <p class="mb-4">
+                Website designed by <a href="https://5s9horizons.github.io/5s9portfolio/">"5s9 Horizons"</a>
+            </p>
+        </div>
+      </div>
+    </main>
+
+    <script>
+        class RainSystem {
+            constructor() {
+                this.container = document.querySelector('.rain-container');
+                this.width = window.innerWidth;
+                this.height = window.innerHeight;
+                this.dropCount = Math.floor((this.width * this.height) / 15000); // Density ratio
+                this.createRain();
+            }
+
+            createRainDrop() {
+                const drop = document.createElement('div');
+                drop.className = 'rain';
+                
+                // Randomize drop properties within realistic ranges
+                const angle = Math.random() * 3 + 15; // 15-18 degree angle
+                const speed = Math.random() * 0.5 + 0.7; // 0.7-1.2s duration
+                const size = Math.random() * 2 + 1; // 1-3px height
+                const xPos = Math.random() * 100; // Random horizontal position
+                
+                drop.style.cssText = `
+                    height: ${Math.random() * 8 + 12}px;
+                    left: ${xPos}%;
+                    animation-duration: ${speed}s;
+                    transform: rotate(${angle}deg);
+                    opacity: ${Math.random() * 0.3 + 0.2};
+                `;
+
+                return drop;
+            }
+
+            createRain() {
+                // Create initial rain drops
+                for (let i = 0; i < this.dropCount; i++) {
+                    const drop = this.createRainDrop();
+                    // Randomize initial positions
+                    drop.style.top = `${Math.random() * 100}vh`;
+                    this.container.appendChild(drop);
+                }
+
+                // Handle animation end and create new drops seamlessly
+                this.container.addEventListener('animationend', (e) => {
+                    const oldDrop = e.target;
+                    const newDrop = this.createRainDrop();
+                    this.container.replaceChild(newDrop, oldDrop);
+                });
+            }
+
+            // Handle window resize
+            handleResize() {
+                this.width = window.innerWidth;
+                this.height = window.innerHeight;
+                const newDropCount = Math.floor((this.width * this.height) / 15000);
+                
+                // Adjust number of drops based on new window size
+                const currentDrops = this.container.children.length;
+                if (newDropCount > currentDrops) {
+                    for (let i = 0; i < newDropCount - currentDrops; i++) {
+                        const drop = this.createRainDrop();
+                        drop.style.top = `${Math.random() * 100}vh`;
+                        this.container.appendChild(drop);
+                    }
+                } else if (newDropCount < currentDrops) {
+                    for (let i = 0; i < currentDrops - newDropCount; i++) {
+                        if (this.container.lastChild) {
+                            this.container.removeChild(this.container.lastChild);
+                        }
+                    }
+                }
+            }
+        }
+
+        // Initialize rain system
+        const rainSystem = new RainSystem();
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            rainSystem.handleResize();
+        });
+    </script>
+    
+    <script>
+      // Hamburger Menu Functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const navOverlay = document.querySelector('.nav-overlay');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.add('active');
+            navOverlay.classList.add('active');
+        });
+
+        navOverlay.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            navOverlay.classList.remove('active');
+        });
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+});
+    </script>
+</body>
+</html>

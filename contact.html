@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5s9 ITACHI | ALL | Contact us</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        :root {
+            --primary-bg: #1a1a2e;
+            --secondary-bg: #16213e;
+            --accent-color: #e94560;
+            --text-color: #ffffff;
+        }
+        
+        html {
+            height: 100%;
+        }
+        
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('itachi.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--text-color);
+            position: relative;
+        }
+
+        .rain-container {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .rain {
+            position: absolute;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.6));
+            animation: rain linear infinite;
+        }
+
+        @keyframes rain {
+            0% {
+                transform: translateY(-100vh);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: var(--secondary-bg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 100;
+        }
+
+        .left-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .hamburger, .search-icon, .close-icon {
+            cursor: pointer;
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: var(--accent-color);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        /* Navigation Menu Styles */
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            left: -80%;
+            width: 80%;
+            height: 100vh;
+            background: var(--primary-bg);
+            transition: 0.3s;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .nav-menu.active {
+            left: 0;
+        }
+
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 999;
+        }
+
+        .nav-overlay.active {
+            display: block;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .nav-menu ul li {
+            margin: 20px 0;
+        }
+
+        .nav-menu ul li a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* Main Content Area */
+        main {
+            margin-top: 60px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="rain-container"></div>
+    <header>
+        <div class="left-section">
+            <button class="hamburger"><i class="fas fa-bars"></i></button>
+            <div class="logo">5s9 ITACHI | ALL</div>
+        </div>
+    </header>
+
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="favorites.html">Favorites</a></li>
+        </ul>
+    </nav>
+    <div class="nav-overlay"></div>
+
+    <main style="text-align: center;">
+      <div class="container mx-auto p-6">
+        <h2 class="text-3xl text-[#e94560] mb-4">Contact Us</h2>
+        <form action="https://formspree.io/f/your_formspree_endpoint" method="POST" class="bg-[none] p-6 rounded">
+            <div class="mb-4">
+                <label class="block mb-2" for="name">Name</label>
+                <input type="text" name="name" required class="w-full p-2 bg-[#0f1a2b] text-white border-2 border-[#e94560] rounded">
+            </div>
+            <div class="mb-4">
+                <label class="block mb-2" for="email">Email</label>
+                <input type="email" name="email" required class="w-full p-2 bg-[#0f1a2b] text-white border-2 border-[#e94560] rounded">
+            </div>
+            <div class="mb-4">
+                <label class="block mb-2" for="message">Message</label>
+                <textarea name="message" required class="w-full p-2 bg-[#0f1a2b] text-white border-2 border-[#e94560] rounded h-32"></textarea>
+            </div>
+            <button type="submit" class="bg-[#e94560] text-white px-4 py-2 rounded hover:bg-opacity-80">Send Message</button>
+        </form>
+      </div>
+      
+      <div class="container mx-auto p-6">
+        <div class="bg-[none] p-6 rounded">
+            <p class="mb-4" style="text-align: center;">Want to join our WhatsApp Community's awesome images Group ?</p>
+            <p style="text-align: center;">Then here is the link.</p><br>
+            <a href="https://chat.whatsapp.com/FTNjQ7OEG2h7g1J38uN3Qp" class="social-link"><i class="fab fa-whatsapp fa-3x" style="display: flex; justify-content: center; color: lightgreen;"></i></a>
+        </div>
+      </div>
+    </main>
+
+    <script>
+        class RainSystem {
+            constructor() {
+                this.container = document.querySelector('.rain-container');
+                this.width = window.innerWidth;
+                this.height = window.innerHeight;
+                this.dropCount = Math.floor((this.width * this.height) / 15000); // Density ratio
+                this.createRain();
+            }
+
+            createRainDrop() {
+                const drop = document.createElement('div');
+                drop.className = 'rain';
+                
+                // Randomize drop properties within realistic ranges
+                const angle = Math.random() * 3 + 15; // 15-18 degree angle
+                const speed = Math.random() * 0.5 + 0.7; // 0.7-1.2s duration
+                const size = Math.random() * 2 + 1; // 1-3px height
+                const xPos = Math.random() * 100; // Random horizontal position
+                
+                drop.style.cssText = `
+                    height: ${Math.random() * 8 + 12}px;
+                    left: ${xPos}%;
+                    animation-duration: ${speed}s;
+                    transform: rotate(${angle}deg);
+                    opacity: ${Math.random() * 0.3 + 0.2};
+                `;
+
+                return drop;
+            }
+
+            createRain() {
+                // Create initial rain drops
+                for (let i = 0; i < this.dropCount; i++) {
+                    const drop = this.createRainDrop();
+                    // Randomize initial positions
+                    drop.style.top = `${Math.random() * 100}vh`;
+                    this.container.appendChild(drop);
+                }
+
+                // Handle animation end and create new drops seamlessly
+                this.container.addEventListener('animationend', (e) => {
+                    const oldDrop = e.target;
+                    const newDrop = this.createRainDrop();
+                    this.container.replaceChild(newDrop, oldDrop);
+                });
+            }
+
+            // Handle window resize
+            handleResize() {
+                this.width = window.innerWidth;
+                this.height = window.innerHeight;
+                const newDropCount = Math.floor((this.width * this.height) / 15000);
+                
+                // Adjust number of drops based on new window size
+                const currentDrops = this.container.children.length;
+                if (newDropCount > currentDrops) {
+                    for (let i = 0; i < newDropCount - currentDrops; i++) {
+                        const drop = this.createRainDrop();
+                        drop.style.top = `${Math.random() * 100}vh`;
+                        this.container.appendChild(drop);
+                    }
+                } else if (newDropCount < currentDrops) {
+                    for (let i = 0; i < currentDrops - newDropCount; i++) {
+                        if (this.container.lastChild) {
+                            this.container.removeChild(this.container.lastChild);
+                        }
+                    }
+                }
+            }
+        }
+
+        // Initialize rain system
+        const rainSystem = new RainSystem();
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            rainSystem.handleResize();
+        });
+    </script>
+    
+    <script>
+      // Hamburger Menu Functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const navOverlay = document.querySelector('.nav-overlay');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.add('active');
+            navOverlay.classList.add('active');
+        });
+
+        navOverlay.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            navOverlay.classList.remove('active');
+        });
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+});
+    </script>
+</body>
+</html>
